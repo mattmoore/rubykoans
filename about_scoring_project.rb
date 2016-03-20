@@ -32,10 +32,10 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 def score(dice)
   # You need to write this method
   sum = 0
-  return sum if dice.count == 0
+  return sum if dice.size == 0
 
   dice.uniq.each do |die|
-    count = dice.count { |d| d == die }
+    count = dice.count die
     if count >= 3
       sum += (die == 1 ? 1000 : die * 100)
       count -= 3
