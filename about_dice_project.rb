@@ -7,7 +7,14 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 # end
 
 class DiceSet
-  
+  attr_reader :values
+
+  def roll(n)
+    @values = []
+    n.times do
+      @values.push rand(1..6)
+    end
+  end
 end
 
 class AboutDiceProject < Neo::Koan
